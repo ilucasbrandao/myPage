@@ -1,9 +1,15 @@
-import { FaPaperclip } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaPaperclip, FaWhatsapp } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import ModernButton from "../components/Button";
 import ProjectCard from "../components/ProjectCard";
+import SocialCard from "../components/SocialCard"
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import lucasFoto from "../assets/lucas.jpg";
+
+import ProfilePhoto from "../components/Avatar";
+import { MdEmail } from "react-icons/md";
+const MotionAvatar = motion(ProfilePhoto);
 
 export default function Home() {
     const navigate = useNavigate();
@@ -29,24 +35,57 @@ export default function Home() {
 
             {/* === APRESENTACION SECTION === */}
             <div className="text-4xl sm:text-5xl font-bold text-gray-800 leading-tight">
+                <MotionAvatar
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    src={lucasFoto}
+                    alt="Foto de perfil do desenvolvedor"
+                    className="shadow-lg mb-6"
+                />
                 <motion.h1
+
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     className="text-4xl sm:text-5xl font-bold text-gray-800 leading-tight"
                 > Olá, eu sou <span className="text-blue-600">Lucas de S. Brandão</span> 👋
                 </motion.h1>
+
             </div>
 
             <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
                 Desenvolvedor full stack apaixonado por criar soluções eficientes e intuitivas.
             </p>
 
+            <div className=" flex justify-content-between">
+                <SocialCard
+                    icon={<FaGithub />}
+                    label="GitHub"
+                    link="https://github.com/seuusuario"
+                />
+                <SocialCard
+                    icon={<FaLinkedin />}
+                    label="LinkedIn"
+                    link="https://linkedin.com/in/seuusuario"
+                />
+                <SocialCard
+                    icon={<MdEmail />}
+                    label="Email"
+                    link="mailto:seuemail@exemplo.com"
+                />
+                <SocialCard
+                    icon={<FaWhatsapp />}
+                    label="WhatsApp"
+                    link="https://wa.me/5588999999999"
+                />
+            </div>
+
             <div className="flex flex-wrap gap-4 mt-8 justify-center">
                 <ModernButton
                     label="Projetos"
                     icon={<FaPaperclip />}
-                    onClick={() => console.log("Botão projetos")}
+                    onClick={() => navigate(`/projetos`)}
                 />
                 <ModernButton
                     label="Entrar em contato"
@@ -87,20 +126,11 @@ export default function Home() {
                 </section>
             </section>
 
-            {/* === SOBRE MIM === */}
-            <section className="mt-20 max-w-3xl">
-                <h2 className="text-3xl font-semibold text-gray-800 mb-4">Sobre Mim</h2>
-                <p className="text-gray-600 leading-relaxed">
-                    Sou formado em Ciências Contábeis, estou graduando em Análise e Desenvolvimento de Sistemas e venho construindo
-                    soluções práticas com foco em negócios e usabilidade. Tenho uma visão voltada
-                    para resultados e estou sempre em busca de novos desafios.
-                </p>
-            </section>
 
             {/* === CTA FINAL === */}
-            <section className=" text-gray-800 py-16 px-6 text-center rounded-xl ">
-                <h2 className="text-3xl font-bold mb-4">Quer conversar sobre uma oportunidade ou parceria? 🚀</h2>
-                <p className="text-lg mb-6">
+            <section className="mt-20 max-w-3xl">
+                <h2 className="text-3xl font-semibold text-gray-800 mb-4">Quer conversar sobre uma oportunidade ou parceria? 🚀</h2>
+                <p className="text-gray-600 leading-relaxed">
                     Estou sempre aberto a novas ideias, colaborações e desafios. Vamos criar algo incrível juntos!
                 </p>
                 <a
@@ -110,6 +140,6 @@ export default function Home() {
                     Entre em contato
                 </a>
             </section>
-        </section>
+        </section >
     );
 }
