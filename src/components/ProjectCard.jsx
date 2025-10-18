@@ -1,22 +1,27 @@
-// src/components/ProjectCard.jsx
-export default function ProjectCard({ title, description, image, onClick, link }) {
-    return (
-        <div
-            onClick={onClick}
-            className="bg-white shadow-md rounded-xl overflow-hidden cursor-pointer transform hover:-translate-y-2 transition-all duration-300 hover:shadow-lg"
-        >
-            {/* Se quiser que o clique leve direto a um link externo */}
-            {link ? (
-                <a href={link} target="_blank" rel="noopener noreferrer">
-                    <img src={image} alt={title} className="w-full h-48 object-cover" />
-                </a>
-            ) : (
-                <img src={image} alt={title} className="w-full h-48 object-cover" />
-            )}
+import { useState, useEffect } from "react";
 
-            <div className="p-4 text-left">
-                <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
-                <p className="text-gray-600 mt-2">{description}</p>
+export default function ProjectCard({ title, description, images }) {
+    const [currentImage, setCurrentImage] = useState(0);
+
+    useEffect(() => {
+        if (images.length > 1) {
+            const interval = setInterval(() => {
+                setCurrentImage(prev => (prev + 1) % images.length);
+            }, 6000);
+            return () => clearInterval(interval);
+        }
+    }, [images]);
+
+    return (
+        <div className="bg-white rounded-2xl shadow-md overflow-hidden">
+            <img
+                src={images[currentImage]}
+                alt={title}
+                className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
+                <p className="text-gray-600">{description}</p>
             </div>
         </div>
     );

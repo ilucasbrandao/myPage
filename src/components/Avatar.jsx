@@ -6,7 +6,7 @@ const ProfilePhoto = ({ src, alt }) => {
             <img
                 src={src}
                 alt={alt}
-                className="w-60 h-60 rounded-full shadow-lg object-cover border-4"
+                className="w-72 h-72 rounded-full border-4 border-[#0FFCBE] shadow-lg object-cover"
             />
         </div>
     );
