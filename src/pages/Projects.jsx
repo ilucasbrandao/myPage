@@ -45,7 +45,7 @@ export default function Projects() {
             description:
                 "A aplicação recebe uma URL longa via API REST e retorna um link curto e permanente. Construído com Node.js e MongoDB, o projeto prioriza a velocidade de resposta no redirecionamento do usuário.",
             images: [andamento],
-            link: ""
+            link: "https://github.com/ilucasbrandao/short-url"
         }
     ];
 
