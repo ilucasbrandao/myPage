@@ -1,15 +1,19 @@
-import React from 'react';
+// components/Avatar.jsx
+import { forwardRef } from 'react';
 
-const ProfilePhoto = ({ src, alt }) => {
+// Use 'forwardRef' para passar a 'ref' do framer-motion para a tag 'img'
+const ProfilePhoto = forwardRef(({ src, alt, className }, ref) => {
     return (
-        <div className="flex flex-col items-center text-center">
-            <img
-                src={src}
-                alt={alt}
-                className="w-72 h-72 rounded-full border-4 border-[#0FFCBE] shadow-lg object-cover"
-            />
-        </div>
+        <img
+            ref={ref} // Aplica a ref aqui
+            src={src}
+            alt={alt}
+            className={className}
+        />
     );
-};
+});
+
+// Adicionar um displayName é bom para depuração
+ProfilePhoto.displayName = "ProfilePhoto";
 
 export default ProfilePhoto;

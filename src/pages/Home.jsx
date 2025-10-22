@@ -7,12 +7,12 @@ import About from "./About";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import SocialCard from "../components/SocialCard";
-import ProfilePhoto from "../components/Avatar";
+import ProfilePhoto from "../components/Avatar"; // (Vem de Avatar.jsx)
 import Footer from "../components/Footer";
 
-import lucasFoto from "../assets/lucas.jpg";
+import lucasFoto from "/fotos/lucas-2.jpg";
 
-const MotionAvatar = motion.create(ProfilePhoto);
+const MotionAvatar = motion(ProfilePhoto);
 
 export default function Home() {
     return (
@@ -36,7 +36,7 @@ export default function Home() {
                         <span className="text-[#0FFCBE] drop-shadow-lg">
                             Lucas Brandão
                         </span>
-                        👋
+                        {" "}👋
                     </motion.h1>
 
                     <motion.p
@@ -45,8 +45,9 @@ export default function Home() {
                         transition={{ delay: 0.3, duration: 0.6 }}
                         className="text-gray-300 text-lg"
                     >
-                        Desenvolvedor full stack apaixonado por criar soluções
-                        eficientes e intuitivas que unem tecnologia e design.
+                        Desenvolvedor <strong className="text-[#106EBE]">Full-Stack</strong> focado em performance e usabilidade. Minha especialidade é transformar ideias em soluções digitais completas e eficientes.
+
+                        Construo interfaces de usuário ágeis com React e Tailwind, e desenvolvo serviços de back-end potentes usando Node.js, Express, PostgreSQL e MongoDB.
                     </motion.p>
 
                     {/* === ESPECIALIDADES === */}
@@ -76,25 +77,25 @@ export default function Home() {
                             icon={<FaGithub />}
                             label="GitHub"
                             link="https://github.com/ilucasbrandao"
-                            color="#0FFCBE"
+                            color="#106dbe"
                         />
                         <SocialCard
                             icon={<FaLinkedin />}
                             label="LinkedIn"
                             link="https://linkedin.com/in/lucas-de-sousa-brandao"
-                            color="#106EBE"
+                            color="#106dbe"
                         />
                         <SocialCard
                             icon={<MdEmail />}
                             label="Email"
-                            link="mailto:lucas.dev@email.com"
-                            color="#0FFCBE"
+                            link="mailto:dev.lucasbrandao@gmail.com"
+                            color="#106dbe"
                         />
                         <SocialCard
                             icon={<FaWhatsapp />}
                             label="WhatsApp"
-                            link="https://wa.me/5588999999999"
-                            color="#106EBE"
+                            link="https://wa.me/5588988839663"
+                            color="#106dbe"
                         />
                     </motion.div>
                 </div>
@@ -109,21 +110,14 @@ export default function Home() {
                     <MotionAvatar
                         src={lucasFoto}
                         alt="Foto de perfil do desenvolvedor"
-                        className="w-72 h-72 rounded-full shadow-[0_0_40px_#106EBE] object-cover border-4 border-[#0FFCBE]/40 hover:scale-105 transition-transform duration-300"
+                        className="w-80 h-80 md:w-96 md:h-96 rounded-full shadow-[0_0_40px_#106EBE] object-cover border-4 border-[#0FFCBE]/40 hover:scale-105 transition-transform duration-300"
                     />
                 </motion.div>
             </section>
 
-            {/* === SEÇÕES === */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.8 }}
-            >
-                <About />
-                <Projects />
-                <Contact />
-            </motion.div>
+            <About />
+            <Projects />
+            <Contact />
 
             {/* === FOOTER === */}
             <Footer />

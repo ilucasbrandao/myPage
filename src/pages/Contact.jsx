@@ -88,7 +88,7 @@ export default function Contact() {
                     />
                     <button
                         type="submit"
-                        className="bg-[#106EBE] hover:bg-[#0FFCBE] text-white px-6 py-3 rounded-md transition-transform transform hover:scale-105"
+                        className="bg-[#0ffcbe] text-black hover:bg-transparent hover:text-[#0ffcbe] hover:border-1 px-6 py-3 rounded-md "
                     >
                         Enviar
                     </button>

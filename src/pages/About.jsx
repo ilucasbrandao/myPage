@@ -15,15 +15,27 @@ export default function About() {
                 <h2 className="text-3xl md:text-4xl font-bold text-[#0FFCBE] mb-4">
                     Sobre mim
                 </h2>
-
-                <p className="text-gray-300 leading-relaxed text-lg">
-                    Sou graduando em <strong>Análise e Desenvolvimento de Sistemas</strong> e formado em <strong>Ciências Contábeis</strong>.
-                    Tenho experiência com tecnologias como JavaScript, React, Node.js, MySQL, PostgreSQL e MongoDB.
+                <p className="text-gray-250 leading-relaxed text-lg">
+                    Com uma carreira consolidada em Ciências Contábeis e atuação como{" "}
+                    <strong>Analista de Pessoal</strong>, desenvolvi ao longo da minha
+                    trajétoria uma forte visão analítica e um profundo entendimento sobre
+                    processos de negócios e gerenciamento de dados. Paralelamente,
+                    desenvolvo sistemas que unem desempenho e experiência de usuário,
+                    buscando sempre eficiência e inovação.
                 </p>
 
+                <p className="text-gray-300 leading-relaxed text-lg">
+                    Hoje, como graduando em{" "}
+                    <strong>Análise e Desenvolvimento de Sistemas</strong>, direciono essa
+                    bagagem para minha paixão: a tecnologia. Meu objetivo é construir
+                    soluções que não sejam apenas tecnicamente robustas, mas que também
+                    resolvam problemas reais de negócios.
+                </p>
                 <p className="text-gray-400 leading-relaxed text-lg">
-                    Atuo como <strong>Analista de Pessoal</strong> desde 2022, o que me proporcionou uma visão analítica e foco em processos.
-                    Paralelamente, desenvolvo sistemas que unem desempenho e experiência de usuário, buscando sempre eficiência e inovação.
+                    Tenho desenvolvido aplicações full-stack, utilizando JavaScript, React
+                    e Node.js, e gerenciando dados com PostgreSQL, MySQL e MongoDB. Em
+                    meus projetos, busco unir o melhor dos dois mundos: desempenho,
+                    eficiência e uma experiência de usuário intuitiva.
                 </p>
             </motion.div>
         </section>
